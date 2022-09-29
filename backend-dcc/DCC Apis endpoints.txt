@@ -1,0 +1,59 @@
+Postman Api for DCC backend test.
+
+/* Credentials i used to register and login if needed
+
+email: admin@test.com
+password: 12345678
+
+/* Register is working but you must change user_id in the api to be able to edit/delete/update
+
+1. To get request from api use: http://127.0.0.1:8000/api/posts
+
+2. To create a post from api use: http://127.0.0.1:8000/api/posts
+
+/* Body select (raw JSON )
+
+/* Headers Key: Accept 		Value: application/json
+	  Key: Content-Type		Value: application/json
+
+/* You can leave "slug" empty in all situtations as it is create automatically using the title's name.
+
+You can use this:
+
+{
+    "title" : "Title post from api",
+    "content" : "Content from the api from the api, but from the api?",
+    "type" : "Sports",
+    "slug":  "",
+    "image_path" : "https://cdn.pixabay.com/photo/2019/12/11/12/21/railroad-tracks-4688247_960_720.jpg",
+    "user_id" : "1" 
+}
+
+3. To update a post from api use: http://127.0.0.1:8000/api/posts/{id}
+
+/* You can leave "slug" empty in all situtations as it is create automatically using the title's name.
+
+After you create a post it will come with an ID.
+To update the specific post use the ID generated when you created it.
+
+You can use this:
+
+{
+    "title" : "Title post from api",
+    "content" : "Content from the api from the api, but from the api?",
+    "type" : "Sports",
+    "slug":  "",
+    "image_path" : "https://cdn.pixabay.com/photo/2019/12/11/12/21/railroad-tracks-4688247_960_720.jpg",
+    "user_id" : "1" 
+}
+
+4. To delete a post use:  http://127.0.0.1:8000/api/posts/{id}
+
+Again in the {id} put the id of the post and click send it will delete the specific post from the database.
+
+5. To upload image use: http://127.0.0.1:8000/api/upload
+
+Use body form-data 
+Key: image 	Value: enter an image from your directory
+
+If the upload was successful it will print the result and a message that shows the path.
