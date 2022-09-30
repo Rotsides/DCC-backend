@@ -65,27 +65,28 @@
                         
                 
                         <div
-                            class="justify-content-between align-items-center  m-auto d-flex text-center position-relative embed-responsive">
+                            class="justify-content-between align-items-center m-auto d-flex text-center  ">
                             <a href="/blog/{{ $post->slug }}" {{-- Here is where the slug is created, i.g the title is I love PHP the slug will be i-love-php --}}
-                                class="text-uppercase bg-primary bg-gradient fw-bold text-light text-lg px-3 py-2 rounded-4 text-decoration-none border border-light shadow-lg">
+                                class="text-uppercase bg-primary bg-gradient fw-bold text-light  px-3 py-2 rounded-4 text-decoration-none border border-light shadow-lg">
                                 Keep
                                 reading</a>
 
 
                             {{-- Here check if the user that created the post is the same as the logged in user. If yes give them access to edit and delete button, else hide --}}
-                            @if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id)
+                            
+                                <span class=" d-flex align-items-center">
+                                    @if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id)
                                 <span
-                                    class="text-uppercase text-center1 fs-5 fw-light text-light text-sm-center px-4 py-2 rounded-4 text-decoration-none">
+                                    class="text-uppercase text-light px-2 ">
                                     <a href="/blog/{{ $post->slug }}/edit"
-                                        class="italic text-dark fw-bold text-decoration-none">Edit</a>
+                                        class="text-light bg-dark fw-bold text-decoration-none rounded-4 shadow-sm px-3 py-2"  >Edit</a>
                                 </span>
-                                <span class=" m-auto">
                                     <form action="/blog/{{ $post->slug }}" method="POST">@csrf
                                         @method('delete')
 
-                                        <button style="background: rgb(243, 56, 56)"
-                                            class="text-uppercase fw-bold rounded-4 border border-blue px-2 py-2"
-                                            type="submit">Delete</button>
+                                        <button style="background: rgb(243, 56, 56); "
+                                            class="text-uppercase rounded-4  border border-none px-2 py-2 shadow-sm"  
+                                            type="submit"><span class="fw-bold" >Delete</span></button>
                                     </form>
                                 </span>
                             @endif
