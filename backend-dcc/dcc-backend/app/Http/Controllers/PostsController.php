@@ -76,7 +76,7 @@ class PostsController extends Controller
             'user_id' => auth()->user()->id
         ]);
 
-        return redirect('/blog')->with('message', 'Your post have been added');
+        return redirect('/blog')->with('message', 'Your post have been added!');
     }
 
     /**

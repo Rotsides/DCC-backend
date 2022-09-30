@@ -30,7 +30,7 @@
             <div class="container">
                 <a class="navbar-brand" href="/">Home
                 </a>
-                <a class="navbar-brand" href="/blog">Blog
+                <a class="navbar-brand" href="/blog">Posts
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"

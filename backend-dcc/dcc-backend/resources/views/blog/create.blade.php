@@ -3,8 +3,8 @@
 @extends ('layouts.app')
 
 @section('content')
-    <div class="width-100 m-auto text-center">
-        <div class="py-15 ">
+    <div class="w-100 m-auto text-center">
+        <div class="py-3 ">
             <h1 class="text-lg">Create Posts</h1>
         </div>
     </div>
@@ -22,30 +22,31 @@
         <form action="/blog" method="POST" enctype="multipart/form-data">
             @csrf
             <input type="text" name="title" placeholder="Title..."
-                class="bg-dark d-block border-b-2 w-100 h-20 text-xl text-light"
-                style="padding-top: 10px; padding-bottom: 10px; padding-left:10px;">
+                class="bg-light d-block rounded-2 py-2 px-2 w-100 h-20 text-dark"
+                >
 
 
-            <div class="container" style="padding: 4px"></div>
+            <div class="py-2 w-100"  ></div>
             <input type="text" name="type" placeholder="Type..."
-                class="bg-dark d-block border-b-2 w-100 h-20 text-xl text-light"
-                style="padding-top: 10px; padding-bottom: 10px; padding-left:10px;">
-            <div class="container" style="padding: 4px"></div>
-            <textarea name="content" placeholder="Content..." class="py-20 bg-dark d-block border-b-2 w-100 h-60 text-xl text-light"
-                style="padding-top: 20px; padding-left:10px;"></textarea>
+                class="bg-light d-block rounded-2 py-2 px-2 w-100 h-20 text-dark"
+                >
+            <div class="py-2 w-100 "  ></div>
+            <textarea name="content" placeholder="Content..." class="bg-light d-block rounded-2 py-2 px-2 w-100 h-20 text-dark"
+               ></textarea>
 
-            <div class="container"
-                style="padding-top:20px; padding-right:10px; padding-bottom: 20px; margin-right: 0px;
-              margin-left: 0px">
-                <label style="width:150px; height:45px;   "
-                    class=" d-flex justify-content-center alignt-items-center bg-light shadow-lg  text-uppercase border border-blue ">
-                    <span class="m-auto fw-bold " style="cursor: pointer; ">Select a File</span>
-                    <input type="file" name="image" style="display: none" class="hidden"></label>
-            </div>
+            <div class="d-flex w-100 justify-content-between align-items-center">
 
-            <div class="container"><button type="submit" style="padding-top: 10px; margin-right:0; margin-left:0"
-                    class="text-uppercase bg-primary bg-gradient fw-bold text-white text-lg px-3 py-3 rounded-5 border border-none m-auto">Submit
-                    Post</button></div>
-        </form>
+                 <div class=" py-3 d-flex justify-content-between">
+                    <label class=" py-2 px-3 bg-light shadow-lg text-uppercase border border-blue">
+                        <span class="m-auto fw-bold " style="cursor: pointer; ">Select a File</span>
+                        <input type="file" name="image" style="display: none" class="hidden"></label>
+                </div>
+
+            
+                    <button type="submit" class="text-uppercase bg-primary bg-gradient fw-bold text-light text-lg px-3 py-2 rounded-4 text-decoration-none border border-light shadow-lg">Submit Post</button>
+           
+           
+        </div>
+    </form>
     </div>
 @endsection
