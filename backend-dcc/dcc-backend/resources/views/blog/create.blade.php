@@ -18,6 +18,7 @@
         </div>
     @endif
 
+    {{-- It requires you to put 4 types of data. Title, type, content(description) and image --}}
     <div class="w-75 m-auto  ">
         <form action="/blog" method="POST" enctype="multipart/form-data">
             @csrf
@@ -35,14 +36,14 @@
                ></textarea>
 
             <div class="d-flex w-100 justify-content-between align-items-center">
-
+                {{-- Here is where user select file from his directory --}}
                  <div class=" py-3 d-flex justify-content-between">
                     <label class=" py-2 px-3 bg-light shadow-lg text-uppercase border border-blue">
                         <span class="m-auto fw-bold " style="cursor: pointer; ">Select a File</span>
                         <input type="file" name="image" style="display: none" class="hidden"></label>
                 </div>
 
-            
+            {{-- When user finishes with the data, submits the post and redirected to /blog page where the post is shown --}}
                     <button type="submit" class="text-uppercase bg-primary bg-gradient fw-bold text-light text-lg px-3 py-2 rounded-4 text-decoration-none border border-light shadow-lg">Submit Post</button>
            
            

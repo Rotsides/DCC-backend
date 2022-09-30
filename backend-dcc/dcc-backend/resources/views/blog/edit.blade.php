@@ -1,3 +1,5 @@
+{{-- This is the edit view after clicking edit button to edit the post. --}}
+
 @extends ('layouts.app')
 
 @section('content')
@@ -6,6 +8,7 @@
             <h1 class="text-lg">Update Post</h1>
         </div>
     </div>
+    {{-- Check if any errors occur show the error if not continue --}}
     @if ($errors->any())
         <div class="  ">
             <ul>
@@ -16,6 +19,7 @@
         </div>
     @endif
 
+    {{-- we navigate to the specific post's url using slug  --}}
     <div class="w-75 m-auto  ">
         <form action="/blog/{{ $post->slug }}" method="POST" enctype="multipart/form-data">
             @csrf
@@ -30,7 +34,7 @@
                 >{{ $post->content }}</textarea>
 
 
-
+            {{-- Submit button to update the post --}}
             <div class="py-4 d-flex justify-content-end"><button type="submit"  
                     class="text-uppercase bg-primary bg-gradient fw-bold text-light text-lg px-3 py-2 rounded-4 text-decoration-none border border-light shadow-lg">Submit
                     Post</button></div>

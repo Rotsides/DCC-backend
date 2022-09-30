@@ -1,3 +1,5 @@
+{{-- This is the view after clicking keep reading --}}
+
 @extends ('layouts.app')
 
 @section('content')

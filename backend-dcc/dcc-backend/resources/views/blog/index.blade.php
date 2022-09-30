@@ -72,15 +72,21 @@
                                 reading</a>
 
 
-                            {{-- Here check if the user that created the post is the same as the logged in user. If yes give them access to edit and delete button, else hide --}}
-                            
+                        
+
+
+                                {{-- Here check if the user that created the post is the same as the logged in user. If yes give them access to edit and delete button, else hide --}}
                                 <span class=" d-flex align-items-center">
                                     @if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id)
+                                     {{-- Edit button --}}
                                 <span
                                     class="text-uppercase text-light px-2 ">
                                     <a href="/blog/{{ $post->slug }}/edit"
-                                        class="text-light bg-dark fw-bold text-decoration-none rounded-4 shadow-sm px-3 py-2"  >Edit</a>
+                                        class="text-light bg-dark fw-bold text-decoration-none rounded-4 shadow-sm px-3 py-2">Edit</a>
                                 </span>
+
+                                {{-- Delete button --}}
+
                                     <form action="/blog/{{ $post->slug }}" method="POST">@csrf
                                         @method('delete')
 
