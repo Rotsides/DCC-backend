@@ -21,5 +21,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+//Used apiResrouce to generate all the routes
+
 Route::apiResource('posts', PostsControllerApi::class);
+
+//This route is for the image upload
 Route::post('upload', [FileController::class, 'upload']);

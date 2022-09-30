@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+//  Controller for the apis i seperated it from the database's controller to be easier for me to create  
 
 use Illuminate\Http\Request;
 use App\Models\PostApi;
@@ -19,6 +20,7 @@ class PostsControllerApi extends Controller
      */
     public function index()
     {
+
         return response()->json(['status' => true, 'posts' => []]);
     }
 
@@ -40,11 +42,7 @@ class PostsControllerApi extends Controller
      */
     public function store(StorePostRequest $request)
     {
-
-        // $newImageName = uniqid() . '-' . $request->title . '.' . $request->image->extension();
-
-        // $request->image->move(public_path('images'), $newImageName);
-
+        //  Store function to store data to database with API
         $post = PostApi::create([
             'title' => $request->input('title'),
             'content' => $request->input('content'),
@@ -91,7 +89,7 @@ class PostsControllerApi extends Controller
 
     public function update(StorePostRequest $request, PostApi $post)
     {
-
+        // Update function for API 
         $post->update($request->all());
 
 
@@ -106,6 +104,8 @@ class PostsControllerApi extends Controller
      */
     public function destroy(PostApi $post)
     {
+
+        //Delete function through API
         $post->delete();
 
         return response()->json(['status' => true, 'message' => "Post deleted succesfully!"], 200);
